@@ -9,8 +9,6 @@ from mycroft.stt import MycroftSTT
 
 from mycroft.skills.core import MycroftSkill
 
-#blabla gitTest
-
 
 class MockRecognizer(object):
     def __init__(self):

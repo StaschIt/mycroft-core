@@ -9,9 +9,10 @@ from mycroft.stt import MycroftSTT
 from os.path import join
 from test.integrationtests.skills.skill_tester import MockSkillsLoader
 from test.integrationtests.skills.discover_tests import IntentTestSequenceMeta
+from mycroft.client.speech import main
 
 
-SKILL_PATH = '/opt/mycroft/skills'
+#SKILL_PATH = '/opt/mycroft/skills'
 
 
 class IntentTestSequence(unittest.TestCase):
@@ -71,14 +72,14 @@ class AudioConsumerTest:
 audioconsumer = AudioConsumerTest()
 audioconsumer.setUp()
 
-loader = MockSkillsLoader(SKILL_PATH)
-emitter = loader.load_skills()
+#loader = MockSkillsLoader(SKILL_PATH)
+#emitter = loader.load_skills()
 
-audioconsumer.queue.put(audioconsumer.create_sample_from_test_file('mycroft'))
+#audioconsumer.queue.put(audioconsumer.create_sample_from_test_file('mycroft'))
 
-audioconsumer.consumer.read()
-audioconsumer.queue.put(audioconsumer.create_sample_from_test_file('hey_mycroft'))
-audioconsumer.recognizer.set_transcriptions(["record"])
+#audioconsumer.consumer.read()
+audioconsumer.queue.put(audioconsumer.create_sample_from_test_file('test'))
+#audioconsumer.recognizer.set_transcriptions(["record"])
 monitor = {}
 
 
@@ -90,5 +91,8 @@ def callback(m):
 audioconsumer.loop.once('recognizer_loop:utterance', callback)
 audioconsumer.consumer.read()
 print(monitor)
+
+#mainMethod = main.main()
+#main.handle_utterance(monitor)
 
 print('success')

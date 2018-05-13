@@ -1,12 +1,16 @@
 from Queue import Queue
 
 import os
+import sys
 import speech_recognition
 from speech_recognition import WavFile, AudioData
 
 from mycroft.client.speech.listener import AudioConsumer, RecognizerLoop
 from mycroft.stt import MycroftSTT
 from os.path import join
+
+
+speechdata_path = sys.argv[1]
 
 
 class MockRecognizer(object):
@@ -32,7 +36,7 @@ def create_sample_from_test_file(sample_path):
             wavfile.SAMPLE_WIDTH)
 
 
-def create_utterance_list(directory):
+def create_utterances_from_wavfiles(directory):
     utterances = {}
     loop = RecognizerLoop()
     queue = Queue()
@@ -44,7 +48,7 @@ def create_utterance_list(directory):
 
     for wavfile in os.listdir(directory):
         def callback(m):
-            utterances[wavfile] = m.get('utterances')
+            utterances[wavfile.replace('.wav', '')] = m.get('utterances')
 
         loop.on('recognizer_loop:utterance', callback)
 
@@ -54,10 +58,22 @@ def create_utterance_list(directory):
     return utterances
 
 
+def create_transcriptions_from_file(prompt_file):
+    transcriptions = {}
+
+    lines = [line.rstrip('\n') for line in open(prompt_file)]
+
+    for line in lines:
+        split = line.split('/')
+        transcriptions[split[-1].split(' ', 1)[0]] = split[-1].split(' ', 1)[1]
+
+    return transcriptions
+
+
 # Audio files in voxforge/*/wav
 # Transcription in voxforge/*/etc/PROMPTS
 
-print(create_utterance_list(join('voxforge', '1028-20100710-hne', 'wav')))
-
+utterances_dic = create_utterances_from_wavfiles(join(speechdata_path, 'wav'))
+transcriptions_dic = create_transcriptions_from_file(join(speechdata_path, 'etc', 'PROMPTS'))
 
 print('success')

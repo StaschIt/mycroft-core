@@ -21,6 +21,7 @@ doc/_build/
 .installed
 .mypy_cache
 .vscode
+/voxforge
 
 # Created by unit tests
 test/unittests/skills/test_skill/settings.json

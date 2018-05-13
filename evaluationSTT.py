@@ -22,50 +22,48 @@ class MockRecognizer(object):
         self.transcriptions = transcriptions
 
 
-class AudioConsumerTest:
-    """
-    AudioConsumerTest
-    """
+def create_sample_from_test_file(sample_name):
+    root_dir = 'voxforge'
+    filename = join(
+        root_dir, '1028-20100710-hne', 'wav',
+        sample_name + '.wav')
+    wavfile = WavFile(filename)
+    with wavfile as source:
+        return AudioData(
+            source.stream.read(), wavfile.SAMPLE_RATE,
+            wavfile.SAMPLE_WIDTH)
 
-    def __init__(self):
-        self.loop = RecognizerLoop()
-        self.queue = Queue()
-        self.recognizer = MockRecognizer()
-        self.consumer = AudioConsumer(
-            self.loop.state, self.queue, self.loop, MycroftSTT(),
-            self.loop.wakeup_recognizer,
-            self.loop.wakeword_recognizer)
 
-    def create_sample_from_test_file(self, sample_name):
-        root_dir = 'voxforge'
-        filename = join(
-            root_dir, '1028-20100710-hne', 'wav',
-            sample_name + '.wav')
-        wavfile = WavFile(filename)
-        with wavfile as source:
-            return AudioData(
-                source.stream.read(), wavfile.SAMPLE_RATE,
-                wavfile.SAMPLE_WIDTH)
-
+# create AudioConsumerTest:
 
 # Audio files in voxforge/*/wav
 # Transcription in voxforge/*/etc/PROMPTS
 
-audioconsumer = AudioConsumerTest()
+utterances = []
+loop = RecognizerLoop()
+recognizer = MockRecognizer()
+queue = Queue()
 
-
-audioconsumer.queue.put(audioconsumer.create_sample_from_test_file('ar-01'))
-audioconsumer.queue.put(audioconsumer.create_sample_from_test_file('ar-02'))
-monitor = {}
+consumer = AudioConsumer(
+    loop.state, queue, loop, MycroftSTT(),
+    loop.wakeup_recognizer,
+    loop.wakeword_recognizer)
 
 
 def callback(m):
-    monitor['utterances'] = m.get('utterances')
+    utterances.append(m.get('utterances'))
 
 
-audioconsumer.loop.once('recognizer_loop:utterance', callback)
-audioconsumer.consumer.read()
-print(monitor)
+loop.on('recognizer_loop:utterance', callback)
+
+queue.put(create_sample_from_test_file('ar-01'))
+consumer.read()
+
+queue.put(create_sample_from_test_file('ar-02'))
+consumer.read()
+
+
+print(utterances)
 
 
 print('success')

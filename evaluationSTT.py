@@ -1,5 +1,6 @@
 from Queue import Queue
 
+import os
 import speech_recognition
 from speech_recognition import WavFile, AudioData
 
@@ -22,48 +23,41 @@ class MockRecognizer(object):
         self.transcriptions = transcriptions
 
 
-def create_sample_from_test_file(sample_name):
-    root_dir = 'voxforge'
-    filename = join(
-        root_dir, '1028-20100710-hne', 'wav',
-        sample_name + '.wav')
-    wavfile = WavFile(filename)
+def create_sample_from_test_file(sample_path):
+
+    wavfile = WavFile(sample_path)
     with wavfile as source:
         return AudioData(
             source.stream.read(), wavfile.SAMPLE_RATE,
             wavfile.SAMPLE_WIDTH)
 
 
-# create AudioConsumerTest:
+def create_utterance_list(directory):
+    utterances = {}
+    loop = RecognizerLoop()
+    queue = Queue()
+
+    consumer = AudioConsumer(
+        loop.state, queue, loop, MycroftSTT(),
+        loop.wakeup_recognizer,
+        loop.wakeword_recognizer)
+
+    for wavfile in os.listdir(directory):
+        def callback(m):
+            utterances[wavfile] = m.get('utterances')
+
+        loop.on('recognizer_loop:utterance', callback)
+
+        queue.put(create_sample_from_test_file(join(directory, wavfile)))
+        consumer.read()
+
+    return utterances
+
 
 # Audio files in voxforge/*/wav
 # Transcription in voxforge/*/etc/PROMPTS
 
-utterances = []
-loop = RecognizerLoop()
-recognizer = MockRecognizer()
-queue = Queue()
-
-consumer = AudioConsumer(
-    loop.state, queue, loop, MycroftSTT(),
-    loop.wakeup_recognizer,
-    loop.wakeword_recognizer)
-
-
-def callback(m):
-    utterances.append(m.get('utterances'))
-
-
-loop.on('recognizer_loop:utterance', callback)
-
-queue.put(create_sample_from_test_file('ar-01'))
-consumer.read()
-
-queue.put(create_sample_from_test_file('ar-02'))
-consumer.read()
-
-
-print(utterances)
+print(create_utterance_list(join('voxforge', '1028-20100710-hne', 'wav')))
 
 
 print('success')

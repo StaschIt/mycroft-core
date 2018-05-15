@@ -6,7 +6,7 @@ import speech_recognition
 from speech_recognition import WavFile, AudioData
 
 from mycroft.client.speech.listener import AudioConsumer, RecognizerLoop
-from mycroft.stt import MycroftSTT
+import mycroft.stt
 from os.path import join
 import editdistance
 
@@ -42,7 +42,7 @@ def create_utterances_from_wavfiles(directory):
     queue = Queue()
 
     consumer = AudioConsumer(
-        loop.state, queue, loop, MycroftSTT(),
+        loop.state, queue, loop, mycroft.stt.DeepSpeechServerSTT(),
         loop.wakeup_recognizer,
         loop.wakeword_recognizer)
 
@@ -73,8 +73,8 @@ def create_transcriptions_from_file(prompt_file):
 def total_edit_distance(dic1, dic2):
     distance = 0
     for key in dic1:
-        # if editdistance.eval(dic1[key], dic2[key]) > 0:
-        #     print('Mistake! Understood: ' + dic1[key] + ' but was: ' + dic2[key])
+        if editdistance.eval(dic1[key], dic2[key]) > 0:
+            print('Mistake! Understood: ' + dic1[key] + ' but was: ' + dic2[key])
         distance += editdistance.eval(dic1[key], dic2[key])
 
     return distance

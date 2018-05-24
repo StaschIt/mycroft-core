@@ -91,17 +91,20 @@ def create_transcriptions_from_file(prompt_file):
     return transcriptions
 
 
-def total_edit_distance(dic1, dic2):
+def total_edit_distance(dic1, dic2, mistakeoutput=None):
     string1 = ''
     string2 = ''
-
+    mistakes = ''
     for key in dic1:
         if editdistance.eval(dic1[key], dic2[key]) > 0:
-            print('Mistake! Understood: ' + dic1[key] + ' but was: ' + dic2[key],
-                  'editdistance = ' + editdistance.eval(dic1[key], dic2[key]))
+            mistakes += 'Understood:\n' + dic1[key] + '\nbut was:\n' + dic2[key] + '\n\n'
+
         string1 += ' ' + dic1[key]
         string2 += ' ' + dic2[key]
 
+    if mistakeoutput is not None:
+        f = open(mistakeoutput + '_mistakes.txt', 'w')
+        f.write(mistakes)
     return editdistance.eval(string1, string2) * 1.0 / max(len(string1), len(string2))
 
 

@@ -60,7 +60,7 @@ def plot_stt_evaluation(sttlist, colors):
         plt.plot(x_axis, y_axis, '-' + color, label=stt)
 
         cell_text.append(
-            (evaluationSTT.total_edit_distance(uttdic, transdic), evaluationSTT.total_wer(uttdic, transdic)))
+            (evaluationSTT.total_edit_distance(uttdic, transdic, stt), evaluationSTT.total_wer(uttdic, transdic)))
 
     plt.axis([0, 15, 0, 50])
     plt.xlabel('audio duration in sec')
@@ -72,7 +72,6 @@ def plot_stt_evaluation(sttlist, colors):
     plt.grid('on')
 
     plt.table(cellText=cell_text, rowLabels=table_rows, rowColours=colors, colLabels=table_columns, loc='top')
-    plt.tight_layout()
     plt.show()
     plt.savefig('test')
 

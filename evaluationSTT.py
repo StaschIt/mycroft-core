@@ -1,13 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: iso-8859-1 -*
+
 from Queue import Queue
 import os
 import time
 import speech_recognition
 from speech_recognition import WavFile, AudioData
-
 from mycroft.client.speech.listener import AudioConsumer, RecognizerLoop
 import mycroft.stt
 from os.path import join
 import editdistance
+import codecs
 
 speechdata_path = 'voxforge/1028-20100710-hne'
 
@@ -51,16 +54,25 @@ def create_sample_from_test_file(sample_path):
 
 
 def create_utterances_from_wavfiles(directory, stt_string):
+    stt = stt_string.split('_')[0]
+    lang = stt_string.split('_')[1]
+    print('fehler', stt, lang)
     utterances = {}
     loop = RecognizerLoop()
     queue = Queue()
 
+    if 'de' in lang:
+        mycroft_stt.lang = 'de'
+    elif 'en' in lang:
+        mycroft_stt.lang = 'en-us'
+
     consumer = AudioConsumer(
-        loop.state, queue, loop, (mycroft_stt if stt_string is 'mycroft' else deepspeech_stt),
+        loop.state, queue, loop, (mycroft_stt if 'mycroft' in stt else deepspeech_stt),
         loop.wakeup_recognizer,
         loop.wakeword_recognizer)
 
     for wavfile in os.listdir(directory):
+        print('wavfile: ' + wavfile)
         begin_time = time.time()
 
         def callback(m):
@@ -82,11 +94,11 @@ def create_utterances_from_wavfiles(directory, stt_string):
 def create_transcriptions_from_file(prompt_file):
     transcriptions = {}
 
-    lines = [line.rstrip('\n') for line in open(prompt_file)]
+    lines = [line.rstrip('\n') for line in codecs.open(prompt_file, 'r', 'utf-8')]
 
     for line in lines:
         split = line.split('/')
-        transcriptions[split[-1].split(' ', 1)[0]] = split[-1].split(' ', 1)[1].decode('unicode-escape')
+        transcriptions[split[-1].split(' ', 1)[0]] = split[-1].split(' ', 1)[1].upper()
 
     return transcriptions
 
@@ -103,7 +115,8 @@ def total_edit_distance(dic1, dic2, mistakeoutput=None):
         string2 += ' ' + dic2[key]
 
     if mistakeoutput is not None:
-        f = open(mistakeoutput + '_mistakes.txt', 'w')
+        f = codecs.open(mistakeoutput + '_mistakes.txt', 'w', 'utf-8')
+        print(mistakes)
         f.write(mistakes)
     return editdistance.eval(string1, string2) * 1.0 / max(len(string1), len(string2))
 
@@ -126,6 +139,17 @@ def total_wer(dic1, dic2):
         string2 += ' ' + dic2[key]
 
     return wer(string1, string2)
+
+
+def sentence_error_rate(dic1, dic2):
+    correct = 0
+    total = 0
+
+    for key in dic1:
+        total += 1
+        if editdistance.eval(dic1[key], dic2[key]) == 0:
+            correct += 1
+    return 1 - (correct * 1.0 / total)
 
 
 if __name__ == "__main__":

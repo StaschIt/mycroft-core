@@ -7,7 +7,7 @@ import matplotlib
 matplotlib.use('pdf')
 import matplotlib.pyplot as plt
 
-stt_testlist = ['mycroft', 'deepspeech']
+stt_testlist = ['mycroft_de', 'mycroft_en']
 colorlist = ['r', 'b']
 
 directory = 'voxforge'
@@ -39,16 +39,17 @@ def plot_stt_evaluation(sttlist, colors):
     ax.set_yticks(minor_ticks, minor=True)
     ax.grid(which='minor', alpha=0.2)
 
-    table_columns = ('character distance', 'wer')
+    table_columns = ('character distance', 'wer', 'sentences error rate')
     table_rows = sttlist
 
     cell_text = []
 
     for stt, color in zip(sttlist, colors):
+        lang = stt.split('_')[1]
         evaluationSTT.wav_readtimes = []
         evaluationSTT.wav_durs = []
-        uttdic = read_all_utterances(directory, stt)
-        transdic = read_all_transcriptions(directory)
+        uttdic = read_all_utterances(join(directory, lang), stt)
+        transdic = read_all_transcriptions(join(directory, lang))
 
         fit = np.polyfit(evaluationSTT.wav_durs, evaluationSTT.wav_readtimes, 1)
         fit_fn = np.poly1d(fit)
@@ -60,7 +61,8 @@ def plot_stt_evaluation(sttlist, colors):
         plt.plot(x_axis, y_axis, '-' + color, label=stt)
 
         cell_text.append(
-            (evaluationSTT.total_edit_distance(uttdic, transdic, stt), evaluationSTT.total_wer(uttdic, transdic)))
+            (evaluationSTT.total_edit_distance(uttdic, transdic, stt), evaluationSTT.total_wer(uttdic, transdic),
+             evaluationSTT.sentence_error_rate(uttdic, transdic)))
 
     plt.axis([0, 15, 0, 50])
     plt.xlabel('audio duration in sec')

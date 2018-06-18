@@ -7,10 +7,10 @@ import matplotlib
 matplotlib.use('pdf')
 import matplotlib.pyplot as plt
 
-stt_testlist = ['mycroft_de', 'mycroft_en']
-colorlist = ['r', 'b']
+stt_testlist = ['deepspeech_de', 'mycroft_de', 'mycroft_en']
+colorlist = ['b', 'g', 'y']
 
-directory = 'voxforge'
+directory = 'smallVoxforge'
 
 
 def read_all_utterances(root_dir, sttlist):

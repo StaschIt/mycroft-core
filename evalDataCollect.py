@@ -7,7 +7,7 @@ import matplotlib
 matplotlib.use('pdf')
 import matplotlib.pyplot as plt
 
-stt_testlist = ['deepspeech_de', 'mycroft_de', 'mycroft_en']
+stt_testlist = ['deepspeech_en', 'mycroft_de', 'mycroft_en']
 colorlist = ['b', 'g', 'y']
 
 directory = 'smallVoxforge'

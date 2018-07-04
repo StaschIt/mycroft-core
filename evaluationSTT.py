@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: iso-8859-1 -*
 
-from Queue import Queue
+from multiprocessing import Queue
 import os
 import time
 import speech_recognition
@@ -56,15 +56,16 @@ def create_sample_from_test_file(sample_path):
 def create_utterances_from_wavfiles(directory, stt_string):
     stt = stt_string.split('_')[0]
     lang = stt_string.split('_')[1]
-    print('fehler', stt, lang)
     utterances = {}
     loop = RecognizerLoop()
     queue = Queue()
 
     if 'de' in lang:
         mycroft_stt.lang = 'de'
+        deepspeech_stt.lang = 'de'
     elif 'en' in lang:
         mycroft_stt.lang = 'en-us'
+        deepspeech_stt.lang = 'en-us'
 
     consumer = AudioConsumer(
         loop.state, queue, loop, (mycroft_stt if 'mycroft' in stt else deepspeech_stt),

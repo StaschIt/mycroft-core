@@ -21,9 +21,10 @@ doc/_build/
 .installed
 .mypy_cache
 .vscode
-/voxforge
-/smallVoxforge
+.venv/
+/test_audio
 
 # Created by unit tests
 test/unittests/skills/test_skill/settings.json
 test_conf.json
+.pytest_cache/

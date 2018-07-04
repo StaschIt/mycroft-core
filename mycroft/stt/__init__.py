@@ -1,5 +1,5 @@
-# Copyright 2017 Mycroft AI Inc.
-#
+#  Copyright 2017 Mycroft AI Inc.
+# # -*- coding: utf-8 -*
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -159,10 +159,17 @@ class DeepSpeechServerSTT(STT):
 
     def execute(self, audio, language=None):
         language = language or self.lang
-        # if not language.startswith("en"):
-        #     raise ValueError("Deepspeech is currently english only")
-        response = post(self.config.get("uri"), data=audio.get_wav_data())
-        return response.text
+        if language.startswith("de"):
+            response = post(self.config.get("uri"), data=audio.get_wav_data())
+            response.encoding = 'utf-8'
+            text = response.text
+        elif language.startswith("en"):
+            response = post(self.config.get("uri"), data=audio.get_wav_data())
+            text = response.text
+        else:
+            raise ValueError("Deepspeech is currently not avaiable for given language")
+
+        return text
 
 
 class KaldiSTT(STT):

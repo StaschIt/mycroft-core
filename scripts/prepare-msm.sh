@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-mycroft_root_dir='/opt/mycroft'
+mycroft_root_dir='/opt/mycroft'  # Also change in configuration
 skills_dir="${mycroft_root_dir}"/skills
 # exit on any error
 set -Ee
@@ -27,8 +27,6 @@ while [ -h "$SOURCE" ]; do
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
  
-chmod +x ${DIR}/../msm/msm
-
 # Determine which user is running this script
 setup_user=$USER
 setup_group=$( id -gn $USER )

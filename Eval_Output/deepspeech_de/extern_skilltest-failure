@@ -1,0 +1,20 @@
+no skill found for utterance SENGE. Expected skill: test-skill
+no skill found for utterance SETZWELDGEDERGATELFORT. Expected skill: test-skill-playback
+no skill found for utterance ICH HABE EIN PROBLEM. Expected skill: test-skill
+no skill found for utterance A TE KONFITURATION. Expected skill: test-skill-configuration
+no skill found for utterance ANHODISTDRUGE WORDEN. Expected skill: test-skill-personal
+no skill found for utterance WIE ES DAS WETTER EINSZERTE. Expected skill: test-skill-weather
+no skill found for utterance WES DAS WETTER. Expected skill: test-skill-weather
+no skill found for utterance ERZELHLENGEREINENVERTNAUESETZT. Expected skill: test-skill-joke
+no skill found for utterance JEDER ODER HALLUNG. Expected skill: test-skill-speak
+no skill found for utterance KOPELEN MEIN GERÄT. Expected skill: test-skill-pairing
+no skill found for utterance AUCH DIE LAUSTAGISTUMM. Expected skill: test-skill-volume
+no skill found for utterance ERZÄHLE MIR EINEN WITZ. Expected skill: test-skill-joke
+no skill found for utterance EKEMNICHNORNFRÜGUNDSEDENUR. Expected skill: test-skill
+no skill found for utterance NOBENDIC. Expected skill: test-skill-configuration
+no skill found for utterance LESCHEELLEALABEIN. Expected skill: test-skill
+no skill found for utterance ZEIGE VERFÜGDACRES GILT. Expected skill: test-skill-installer
+no skill found for utterance AN DES ZERIERUNTEIGAEN. Expected skill: test-skill-weather
+no skill found for utterance SPRÄNGE ZUM RECHTEN TETE. Expected skill: test-skill-playback
+Fail for utterance 'WELCHE VERSION IST ISTENERT'. expected: test-skill but was: test-skill-version-checker
+no skill found for utterance SETZE DENAUSDERKE AUF NULL. Expected skill: test-skill-volume

@@ -1,0 +1,11 @@
+utterance WHEN WERE YOU BORN calls test-skill-personal
+utterance WHAT ARE YOU calls test-skill-personal
+utterance TO ME THE SPELLING OF COMPUTER calls test-skill-spelling
+utterance REMIND ME TO WAKE UP AT MORROW MORNING calls test-skill-reminder
+utterance SING A SONG calls test-skill-singing
+utterance WHERE AM I calls test-skill-configuration
+utterance SAY HAD A WORD calls test-skill-speak
+utterance GO TO SLEEP calls test-skill-naptime
+utterance STOP calls test-skill-stop
+utterance MUTE SPEAKER calls test-skill-volume
+utterance HELLO WORLD calls test-skill-hello-world

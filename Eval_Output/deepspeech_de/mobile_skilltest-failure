@@ -1,0 +1,19 @@
+no skill found for utterance DIE IST EINE IP ADRESSE. Expected skill: test-skill-ip
+no skill found for utterance ADETEKONFITUATION. Expected skill: test-skill-configuration
+no skill found for utterance DEN WURDESDLOGEWORDEN. Expected skill: test-skill-personal
+no skill found for utterance WIE IST DAS WETTIZIERTE. Expected skill: test-skill-weather
+no skill found for utterance WIE IST DAS WETTER. Expected skill: test-skill-weather
+no skill found for utterance EKÄMMICHNORNFRÜHUNSIEDENUR. Expected skill: test-skill-alarm
+no skill found for utterance ERZÄHLE MIR EINEN VERNAULESSETZT. Expected skill: test-skill-joke
+no skill found for utterance WIEDER ODER HAUN. Expected skill: test-skill-speak
+no skill found for utterance KOPELENMEINTGERET. Expected skill: test-skill-pairing
+no skill found for utterance WELCHE VESION IST INSTALLIERT. Expected skill: test-skill-version-checker
+no skill found for utterance ACH DIE DAUSTAKGESTUMMN. Expected skill: test-skill-volume
+no skill found for utterance PREHELTZUNIHTENKIETE. Expected skill: test-skill-playback-control
+no skill found for utterance ERZÄHLEN WIE EINEN WITZ. Expected skill: test-skill-joke
+no skill found for utterance ICH HABE EIN ZULEM. Expected skill: test-skill-support
+no skill found for utterance LESCHEALEALLABEN. Expected skill: test-skill-alarm
+no skill found for utterance EI DE VERFÜUGBACHRESGELTT. Expected skill: test-skill-installer
+no skill found for utterance SEZET WIEDERGABELFORT. Expected skill: test-skill-playback-control
+no skill found for utterance AN IST SOLLEN UNTERGAGEN. Expected skill: test-skill-weather
+no skill found for utterance SETZE DELAUSTÄKE AUF NULL. Expected skill: test-skill-volume

@@ -1,0 +1,36 @@
+no skill found for utterance WHAT IS MY IPAD DRESS. Expected skill: test-skill-ip
+no skill found for utterance WHAT DOES THE GEPEDIATEYABOLDABAMA. Expected skill: test-skill-wiki
+no skill found for utterance PAMFLERECAURDING. Expected skill: test-skill-audio-record
+no skill found for utterance AT THE US. Expected skill: test-skill-npr-news
+no skill found for utterance APDAYED CONTIGURATION. Expected skill: test-skill-configuration
+no skill found for utterance CARE SOMETHING ABOUT PUDAMA. Expected skill: test-skill-wiki
+no skill found for utterance PALDAWORCOMPUTEER. Expected skill: test-skill-spelling
+Fail for utterance 'THEN WHERE ARE YOU WON'. expected: test-skill-personal but was: test-skill-configuration
+no skill found for utterance THEN A HAND THAT. Expected skill: test-skill-weather
+no skill found for utterance AND THE CASE. Expected skill: test-skill-installer
+no skill found for utterance MAKE ME UP AT THE LINMENTCLOP. Expected skill: test-skill-alarm
+no skill found for utterance TO ME HE FELLING OF COMPUTER. Expected skill: test-skill-spelling
+no skill found for utterance TELL ME A JOKE. Expected skill: test-skill-joke
+no skill found for utterance REPEATED HYDROLVECRUDRIVAR. Expected skill: test-skill-speak
+no skill found for utterance HE CAUGHT ALL YOU FOR TEN MINUTES. Expected skill: test-skill-audio-record
+no skill found for utterance PAY MIGHT DEIAS. Expected skill: test-skill-pairing
+no skill found for utterance IN GREAT WYDIUM. Expected skill: test-skill-volume
+no skill found for utterance THING OF TOM. Expected skill: test-skill-singing
+no skill found for utterance MESOMPLAYBAC. Expected skill: test-skill-playback-control
+no skill found for utterance I WANT TO HEAR A JOKE. Expected skill: test-skill-joke
+no skill found for utterance AT A THE TO RISE OF AFTER. Expected skill: test-skill-stock
+no skill found for utterance A TIME IS IT. Expected skill: test-skill-date-time
+no skill found for utterance HE AND I. Expected skill: test-skill-configuration
+no skill found for utterance I HAVE A PROBLEM. Expected skill: test-skill-support
+no skill found for utterance TO LEAVE ALL OF MY ALONE. Expected skill: test-skill-alarm
+no skill found for utterance THEY HAD NO WORD. Expected skill: test-skill-speak
+no skill found for utterance SHOW ME AND THEN I DO IT. Expected skill: test-skill-installer
+no skill found for utterance TELL ME AND CHATNORETSHOLK. Expected skill: test-skill-joke
+no skill found for utterance OH. Expected skill: test-skill-stop
+no skill found for utterance IT MYREMINDOS. Expected skill: test-skill-reminder
+no skill found for utterance LAYBREIASDRACK. Expected skill: test-skill-playback-control
+no skill found for utterance ON TO EVER LIKE ARE THE ANTE. Expected skill: test-skill-weather
+no skill found for utterance PETE. Expected skill: test-skill-volume
+no skill found for utterance HALLO WORLD. Expected skill: test-skill-hello-world
+no skill found for utterance PONTACTSOMPLOD. Expected skill: test-skill-support
+no skill found for utterance THAT ARE O TWO FIVE. Expected skill: test-skill-volume

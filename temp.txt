@@ -1,0 +1,16 @@
+no skill found for utterance WHAT'S THE NEWS. Expected skill: test-skill-npr-news
+no skill found for utterance TELL ME SOMETHING ABOUT OBAMA. Expected skill: test-skill-wiki
+no skill found for utterance SHOW ME AND STELLA BILL SKILLS. Expected skill: test-skill-installer
+Fail for utterance 'SAY HELLO WORLD'. expected: test-skill-speak but was: test-skill-hello-world
+
+failed to load skill:
+no skill found for utterance WHAT'S THE WEATHER LIKE IN SEATTLE. Expected skill: test-skill-weather
+no skill found for utterance WHEN IS SUNSET. Expected skill: test-skill-weather
+no skill found for utterance WHAT TIME IS IT. Expected skill: test-skill-date-time
+
+
+no skill found for utterance WAKE ME UP AT 7. Expected skill: test-skill-alarm
+no skill found for utterance DELETE ALL OF MY ALARMS. Expected skill: test-skill-alarm
+
+no skill found for utterance I HAVE A PROBLEM. Expected skill: test-skill-support
+no skill found for utterance CONTACT SUPPORT. Expected skill: test-skill-support

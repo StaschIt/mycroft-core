@@ -1,0 +1,10 @@
+utterance WIE IST MEINE IP-ADRESSE calls test-skill-ip
+utterance UPDATE KONFIGURATION calls test-skill-configuration
+utterance WANN WURDEST DU GEBOREN calls test-skill-personal
+utterance WAS MACHST DU calls test-skill-personal
+utterance WIEDERHOLE HALLO calls test-skill-speak
+utterance WELCHE VERSION IST INSTALLIERT calls test-skill-version-checker
+utterance MACH DIE LAUTSTÄRKE STUMM calls test-skill-volume
+utterance WO BIN ICH calls test-skill-configuration
+utterance SAGE HYDROSCHRAUBENSCHLÜSSEL calls test-skill-speak
+utterance ZEIGE VERFÜGBARE SKILLS calls test-skill-installer

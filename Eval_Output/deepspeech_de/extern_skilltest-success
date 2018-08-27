@@ -1,0 +1,3 @@
+utterance WIE IST EINE IP ADRESSE calls test-skill-ip
+utterance WAS MACHST DU calls test-skill-personal
+utterance SAGE INTROHSCHRAUGENSCHLÜSSEL calls test-skill-speak

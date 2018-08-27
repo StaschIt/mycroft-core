@@ -72,7 +72,8 @@ def create_utterances_from_wavfiles(directory, stt_string):
         loop.wakeup_recognizer,
         loop.wakeword_recognizer)
 
-    for wavfile in os.listdir(directory):
+    wavfiles = (x for x in os.listdir(directory) if x.endswith('.wav'))
+    for wavfile in wavfiles:
         print('wavfile: ' + wavfile)
         begin_time = time.time()
 

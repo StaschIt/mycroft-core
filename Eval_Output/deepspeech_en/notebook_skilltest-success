@@ -1,0 +1,3 @@
+utterance WHAT ARE YOU calls test-skill-personal
+utterance REMIND ME TO WAKE UP TO MORROW MORNING calls test-skill-reminder
+utterance GO TO SLEEP calls test-skill-naptime

@@ -1,0 +1,12 @@
+no skill found for utterance SETZE DIE WIEDERGABE FORT. Expected skill: test-skill-playback
+no skill found for utterance WIE IST DAS WETTER IN SEATTLE. Expected skill: test-skill-weather
+no skill found for utterance WIE IST DAS WETTER. Expected skill: test-skill-weather
+no skill found for utterance WECKE MICH MORGEN FRÜH UM 7 UHR. Expected skill: test-skill-alarm
+no skill found for utterance ERZÄHLE MIR EINEN CHUCK NORRIS WITZ. Expected skill: test-skill-joke
+no skill found for utterance POPPELE MEIN GERÄT. Expected skill: test-skill-pairing
+no skill found for utterance ERZÄHL MIR EINEN WITZ. Expected skill: test-skill-joke
+no skill found for utterance ICH HABE EIN PROBLEM. Expected skill: test-skill-support
+no skill found for utterance LÖSCHE ALLE ALARME. Expected skill: test-skill-alarm
+no skill found for utterance WANN IST SONNENUNTERGANG. Expected skill: test-skill-weather
+no skill found for utterance SPRINGE ZUM NÄCHSTEN TITEL. Expected skill: test-skill-playback
+no skill found for utterance SETZE DIE LAUTSTÄRKE AUF NULL. Expected skill: test-skill-volume

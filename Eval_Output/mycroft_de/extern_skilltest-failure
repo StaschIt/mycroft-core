@@ -1,0 +1,14 @@
+Fail for utterance 'SINGE'. expected: test-skill but was: test-skill-singing
+no skill found for utterance SETZE DIE WIEDERGABE FORT. Expected skill: test-skill-playback
+no skill found for utterance ICH HABE EIN PROBLEM. Expected skill: test-skill
+no skill found for utterance WIE IST DAS WETTER IN SEATTLE. Expected skill: test-skill-weather
+no skill found for utterance WIE IST DAS WETTER. Expected skill: test-skill-weather
+no skill found for utterance ERZÄHLE MIR EINEN CHUCK NORRIS WITZ. Expected skill: test-skill-joke
+no skill found for utterance KAPELLE MEIN GERÄT. Expected skill: test-skill-pairing
+no skill found for utterance ERZÄHLE MIR EINEN WITZ. Expected skill: test-skill-joke
+no skill found for utterance WECKE MICH MORGEN FRÜH UM 7 UHR. Expected skill: test-skill
+no skill found for utterance LÖSCHE ALLE ALARME. Expected skill: test-skill
+no skill found for utterance WANN IST SONNENUNTERGANG. Expected skill: test-skill-weather
+no skill found for utterance SPRINGE ZUM NÄCHSTEN TITEL. Expected skill: test-skill-playback
+Fail for utterance 'WELCHE VERSION IST INSTALLIERT'. expected: test-skill but was: test-skill-version-checker
+no skill found for utterance SETZE DIE LAUTSTÄRKE AUF NULL. Expected skill: test-skill-volume

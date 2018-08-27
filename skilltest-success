@@ -1,0 +1,28 @@
+utterance WHAT IS MY IP ADDRESS calls test-skill-ip
+utterance CANCEL RECORDING calls test-skill-audio-record
+utterance UPDATE CONFIGURATION calls test-skill-configuration
+utterance TELL ME SOMETHING ABOUT OBAMA calls test-skill-wiki
+utterance SPELL THE WORD COMPUTER calls test-skill-spelling
+utterance WHEN WERE YOU BORN calls test-skill-personal
+utterance INSTALL CUSTOM SKILL calls test-skill-installer
+utterance WHAT ARE YOU calls test-skill-personal
+utterance TELL ME THE SPELLING OF COMPUTER calls test-skill-spelling
+utterance TELL ME A JOKE calls test-skill-joke
+utterance REPEAT HYDRO SCREWDRIVER calls test-skill-speak
+utterance RECORD AUDIO FOR 10 MINUTES calls test-skill-audio-record
+utterance REMIND ME TO WAKE UP TOMORROW MORNING calls test-skill-reminder
+utterance PAIR MY DEVICE calls test-skill-pairing
+utterance INCREASE VOLUME calls test-skill-volume
+utterance SING A SONG calls test-skill-singing
+utterance RESUME PLAYBACK calls test-skill-playback-control
+utterance I WANT TO HEAR A JOKE calls test-skill-joke
+utterance WHAT IS THE STOCK PRICE OF APPLE calls test-skill-stock
+utterance WHERE AM I calls test-skill-configuration
+utterance GO TO SLEEP calls test-skill-naptime
+utterance TELL ME A CHUCK NORRIS JOKE calls test-skill-joke
+utterance STOP calls test-skill-stop
+utterance LIST MY REMINDERS calls test-skill-reminder
+utterance PLAY PREVIOUS TRACK calls test-skill-playback-control
+utterance MUTE SPEAKER calls test-skill-volume
+utterance HELLO WORLD calls test-skill-hello-world
+utterance SET VOLUME TO 5 calls test-skill-volume

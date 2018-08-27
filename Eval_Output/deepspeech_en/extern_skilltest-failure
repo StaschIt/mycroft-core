@@ -1,0 +1,26 @@
+no skill found for utterance WHAT DOES THE GEPEDIASAYABOUDOBAMMAT. Expected skill: test-skill-wiki
+no skill found for utterance ONE RECATING. Expected skill: test-skill-audio-record
+no skill found for utterance WHATS THE USE. Expected skill: test-skill-npr-news
+no skill found for utterance UPDATED CONTIGURATION. Expected skill: test-skill-configuration
+no skill found for utterance TELL ME SOMETHING ABOUT OBAMA. Expected skill: test-skill-wiki
+no skill found for utterance WHEN THE SUN SET. Expected skill: test-skill-weather
+no skill found for utterance AND STILL CUS THEM SKILL. Expected skill: test-skill-installer
+no skill found for utterance TAKE ME UP AT SEVEN OCLOCK. Expected skill: test-skill-alarm
+no skill found for utterance TELL ME A JOKE. Expected skill: test-skill-joke
+no skill found for utterance BECAUGRTDOURYOURFOURT TEN MINUTES. Expected skill: test-skill-audio-record
+no skill found for utterance ALL MY DO IS. Expected skill: test-skill-pairing
+no skill found for utterance INCREASE VYLDIUM. Expected skill: test-skill-volume
+no skill found for utterance SU PLAYBACK. Expected skill: test-skill-playback-control
+no skill found for utterance I WANT TO HEAR A JOKE. Expected skill: test-skill-joke
+no skill found for utterance ATERSOSTOPPEDRISEOFFAUTLE. Expected skill: test-skill-stock
+no skill found for utterance WHAT TIME IS IT. Expected skill: test-skill-date-time
+no skill found for utterance I HAVE A PROBLEM. Expected skill: test-skill-support
+no skill found for utterance TO LEAD ALL OF MY ALLARMCE. Expected skill: test-skill-alarm
+no skill found for utterance SHOW ME AND TALOBERSKIDLS. Expected skill: test-skill-installer
+no skill found for utterance TELL ME AT JAGNORIS CHALK. Expected skill: test-skill-joke
+no skill found for utterance LEST MY REMINDERS. Expected skill: test-skill-reminder
+no skill found for utterance BLABREVIUS TRACK. Expected skill: test-skill-playback-control
+no skill found for utterance ON TO WEATHER LIKE IN SEATTLE. Expected skill: test-skill-weather
+Fail for utterance 'TO SPEAK HER'. expected: test-skill-volume but was: test-skill-speak
+no skill found for utterance CONTACT SUPPLOT. Expected skill: test-skill-support
+no skill found for utterance SET WOU TWO FIVE. Expected skill: test-skill-volume

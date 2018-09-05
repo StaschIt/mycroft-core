@@ -12,7 +12,7 @@ from os.path import join
 import editdistance
 import codecs
 
-speechdata_path = 'voxforge/1028-20100710-hne'
+speechdata_path = 'test_audio/smallVoxforge/en/1028-20100710-hne'
 
 mycroft_stt = mycroft.stt.MycroftSTT()
 deepspeech_stt = mycroft.stt.DeepSpeechServerSTT()
@@ -158,8 +158,9 @@ if __name__ == "__main__":
     # Audio files in voxforge/*/wav
     # Transcription in voxforge/*/etc/PROMPTS
 
-    utterances_dic = create_utterances_from_wavfiles(join(speechdata_path, 'wav'), 'mycroft')
+    utterances_dic = create_utterances_from_wavfiles(join(speechdata_path, 'wav'), 'mycroft_en')
     transcriptions_dic = create_transcriptions_from_file(join(speechdata_path, 'etc', 'PROMPTS'))
 
+    print(utterances_dic)
     print('character distance', total_edit_distance(utterances_dic, transcriptions_dic))
     print('success')

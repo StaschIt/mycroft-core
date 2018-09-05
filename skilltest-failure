@@ -8,3 +8,4 @@ Fail for utterance 'SAY HELLO WORLD'. expected: test-skill-speak but was: test-s
 no skill found for utterance SHOW ME AND STELLA BILL SKILLS. Expected skill: test-skill-installer
 no skill found for utterance WHAT'S THE WEATHER LIKE IN SEATTLE. Expected skill: test-skill-weather
 no skill found for utterance CONTACT SUPPORT. Expected skill: test-skill-support
+Fail for utterance 'PAIR MY DEVICE'. expected: test-skill-ip but was: test-skill-pairing

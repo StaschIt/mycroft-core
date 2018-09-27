@@ -1,0 +1,23 @@
+test-mycroft-alarm.mycroftai|wecke mich morgen früh um 7 Uhr
+test-mycroft-alarm.mycroftai|lösche alle alarme
+test-mycroft-configuration.mycroftai|wo bin ich
+test-mycroft-configuration.mycroftai|update konfiguration
+test-mycroft-installer.mycroftai|zeige verfügbare skills
+test-mycroft-ip.mycroftai|wie ist meine ip adresse
+test-mycroft-joke.mycroftai|erzähle mir einen witz
+test-mycroft-joke.mycroftai|erzähle mir einen chuck norris witz
+test-mycroft-pairing.mycroftai|kappele mein gerät
+test-mycroft-personal.mycroftai|wann wurdest du geboren
+test-mycroft-personal.mycroftai|was machst du
+test-mycroft-playback-control.mycroftai|setze die wiedergabe fort
+test-mycroft-playback-control.mycroftai|springe zum nächsten titel
+test-mycroft-singing.mycroftai|singe
+test-mycroft-speak.mycroftai|wiederhole hallo
+test-mycroft-speak.mycroftai|sage hydroschraubenschlüssel
+test-mycroft-support.mycroftai|ich habe ein problem
+test-mycroft-version-checker.mycroftai|welche version ist installiert
+test-mycroft-volume.mycroftai|setze die lautstärke auf null
+test-mycroft-volume.mycroftai|mach die lautstärke stumm
+test-mycroft-weather.mycroftai|wie ist das wetter in seattle
+test-mycroft-weather.mycroftai|wann ist sonnenuntergang
+test-mycroft-weather.mycroftai|wie ist das wetter

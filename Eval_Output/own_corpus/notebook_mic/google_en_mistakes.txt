@@ -1,0 +1,15 @@
+Understood:
+WAKE ME UP AT 7
+but was:
+WAKE ME UP AT 7 O'CLOCK
+
+Understood:
+DELETE ALL OF MY ALARM
+but was:
+DELETE ALL OF MY ALARMS
+
+Understood:
+SHOW ME INTOLERABLE SCALE
+but was:
+SHOW ME INSTALLABLE SKILLS
+

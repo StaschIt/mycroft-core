@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: iso-8859-1 -*
-
+from builtins import print
 from multiprocessing import Queue
 import os
 import time
@@ -12,10 +12,11 @@ from os.path import join
 import editdistance
 import codecs
 
-speechdata_path = 'test_audio/smallVoxforge/en/1028-20100710-hne'
+speechdata_path = 'test_audio/skill_wer_test/de-de/notebook_mic'
 
 mycroft_stt = mycroft.stt.MycroftSTT()
 deepspeech_stt = mycroft.stt.DeepSpeechServerSTT()
+google_stt = mycroft.stt.GoogleCloudSTT()
 
 wav_durs = []
 wav_readtimes = []
@@ -63,14 +64,15 @@ def create_utterances_from_wavfiles(directory, stt_string):
     if 'de' in lang:
         mycroft_stt.lang = 'de'
         deepspeech_stt.lang = 'de'
+        google_stt.lang = 'de'
     elif 'en' in lang:
         mycroft_stt.lang = 'en-us'
         deepspeech_stt.lang = 'en-us'
+        google_stt.lang = 'en-us'
 
-    consumer = AudioConsumer(
-        loop.state, queue, loop, (mycroft_stt if 'mycroft' in stt else deepspeech_stt),
-        loop.wakeup_recognizer,
-        loop.wakeword_recognizer)
+    used_stt = mycroft_stt if 'mycroft' in stt else google_stt if 'google' in stt else deepspeech_stt
+    print('usedstt', used_stt)
+    consumer = AudioConsumer(loop.state, queue, loop, used_stt, loop.wakeup_recognizer, loop.wakeword_recognizer)
 
     wavfiles = (x for x in os.listdir(directory) if x.endswith('.wav'))
     for wavfile in wavfiles:
@@ -154,13 +156,26 @@ def sentence_error_rate(dic1, dic2):
     return 1 - (correct * 1.0 / total)
 
 
+def clean_wrong_mistakes(dic):
+    for key in dic:
+        dic[key] = dic[key].replace('-', ' ')
+
+
 if __name__ == "__main__":
     # Audio files in voxforge/*/wav
     # Transcription in voxforge/*/etc/PROMPTS
+    stt = 'mycroft_en'
 
-    utterances_dic = create_utterances_from_wavfiles(join(speechdata_path, 'wav'), 'mycroft_en')
+    utterances_dic = create_utterances_from_wavfiles(join(speechdata_path, 'wav'), stt)
     transcriptions_dic = create_transcriptions_from_file(join(speechdata_path, 'etc', 'PROMPTS'))
 
-    print(utterances_dic)
-    print('character distance', total_edit_distance(utterances_dic, transcriptions_dic))
+    clean_wrong_mistakes(utterances_dic)
+    clean_wrong_mistakes(transcriptions_dic)
+
+    print('uttdic', utterances_dic)
+    print('transdic', transcriptions_dic)
+
+    print(total_edit_distance(utterances_dic, transcriptions_dic, stt))
+    print('Word Error Rate', total_wer(utterances_dic, transcriptions_dic))
+    print('Sentence Error Rate', sentence_error_rate(utterances_dic, transcriptions_dic))
     print('success')

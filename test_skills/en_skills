@@ -1,0 +1,39 @@
+test-mycroft-alarm.mycroftai|wake me up at 7
+test-mycroft-alarm.mycroftai|delete all of my alarms
+test-mycroft-audio-record.mycroftai|record audio for 10 minutes
+test-mycroft-audio-record.mycroftai|cancel recording
+test-mycroft-configuration.mycroftai|where am i
+test-mycroft-configuration.mycroftai|update consecration
+test-mycroft-date-time.mycroftai|what time is it
+test-mycroft-hello-world.mycroftai|hello world
+test-mycroft-installer.mycroftai|show me and stella blue skittles
+test-mycroft-installer.mycroftai|install custom skill
+test-mycroft-ip.mycroftai|what is my ip address
+test-mycroft-joke.mycroftai|i want to hear a joke
+test-mycroft-joke.mycroftai|tell me a joke
+test-mycroft-joke.mycroftai|tell me a chuck norris joke
+test-mycroft-naptime.mycroftai|go to sleep
+test-mycroft-npr-news.mycroftai|what's the news
+test-mycroft-pairing.mycroftai|pair my device
+test-mycroft-personal.mycroftai|when were you born
+test-mycroft-personal.mycroftai|what are you
+test-mycroft-playback-control.mycroftai|play previous track
+test-mycroft-playback-control.mycroftai|resume playback
+test-mycroft-reminder.mycroftai|remind me to wake up tomorrow morning
+test-mycroft-reminder.mycroftai|list my reminders
+test-mycroft-singing.mycroftai|sing a song
+test-mycroft-speak.mycroftai|repeat hydro screwdriver
+test-mycroft-speak.mycroftai|say hello world
+test-mycroft-spelling.mycroftai|spell the word computer
+test-mycroft-spelling.mycroftai|tell me the spelling of computer
+test-mycroft-stock.mycroftai|what is the stock price of apple
+test-mycroft-stop.mycroftai|stop
+test-mycroft-support.mycroftai|i have a problem
+test-mycroft-support.mycroftai|contact support
+test-mycroft-volume.mycroftai|set volume to 5
+test-mycroft-volume.mycroftai|increase volume
+test-mycroft-volume.mycroftai|mute speaker
+test-mycroft-weather.mycroftai|when is sunset
+test-mycroft-weather.mycroftai|what's the weather like in seattle
+test-mycroft-wiki.mycroftai|tell me something about obama
+test-mycroft-wiki.mycroftai|what does wikipedia say about obama

@@ -1,0 +1,10 @@
+Understood:
+POPPELE MEIN GERÄT
+but was:
+KOPPELE MEIN GERÄT
+
+Understood:
+ERZÄHL MIR EINEN WITZ
+but was:
+ERZÄHLE MIR EINEN WITZ
+

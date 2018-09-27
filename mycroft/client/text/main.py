@@ -18,11 +18,11 @@ import io
 from mycroft.tts import TTS
 
 
-def custom_except_hook(exctype, value, traceback):           # noqa
-    print(sys.stdout.getvalue(), file=sys.__stdout__)        # noqa
-    print(sys.stderr.getvalue(), file=sys.__stderr__)        # noqa
-    sys.stdout, sys.stderr = sys.__stdout__, sys.__stderr__  # noqa
-    sys.__excepthook__(exctype, value, traceback)            # noqa
+def custom_except_hook(exctype, value, traceback):
+    print(sys.stdout.getvalue(), file=sys.__stdout__)
+    print(sys.stderr.getvalue(), file=sys.__stderr__)
+    sys.stdout, sys.stderr = sys.__stdout__, sys.__stderr__
+    sys.__excepthook__(exctype, value, traceback)
 
 
 sys.excepthook = custom_except_hook  # noqa

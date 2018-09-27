@@ -8,10 +8,8 @@ from matplotlib import rcParams
 matplotlib.use('pdf')
 import matplotlib.pyplot as plt
 
-stt_testlist = [  # 'deepspeech_de', 'mycroft_de', 'deepspeech_en',
-    'mycroft_en']
-colorlist = [  # 'r', 'b', 'g',
-    'y']
+stt_testlist = ['deepspeech_de', 'mycroft_de', 'deepspeech_en', 'mycroft_en']
+colorlist = ['r', 'b', 'g', 'y']
 
 directory = 'test_audio/voxforge'
 

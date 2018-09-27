@@ -1,0 +1,10 @@
+Understood:
+WAKE ME UP AT 7
+but was:
+WAKE ME UP AT 7 O'CLOCK
+
+Understood:
+SHOW ME AND STELLA BILL SKILLS
+but was:
+SHOW ME INSTALLABLE SKILLS
+
